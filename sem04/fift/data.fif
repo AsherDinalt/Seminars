@@ -1,0 +1,25 @@
+"TonUtil.fif" include
+"Asm.fif" include
+variable m_dict
+dictnew m_dict !
+
+b{00000011} // value
+1 // key
+m_dict @    // dictionary
+256 // key length
+idict! drop 
+m_dict !
+
+b{00000101} // value
+2 // key
+m_dict @    // dictionary
+256 // key length
+idict! drop 
+m_dict !
+
+
+<b
+    b{1} s,
+    m_dict @ ref,
+    2 32 u,
+b>
